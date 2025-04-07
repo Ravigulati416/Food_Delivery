@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Cart{% endblock %}
+
+{% block header_title %}Your Cart{% endblock %}
+
+{% block content %}
+<section class="cart-details">
+    <h2>Items in Your Cart</h2>
+    <ul class="cart-list">
+        {% for item in cart_items %}
+        <li class="cart-item">
+            <div class="item-details">
+                <span class="item-name">{{ item.name }}</span>
+                <div class="quantity-controls">
+                    <form action="/update_cart" method="post">
+                        <input type="hidden" name="name" value="{{ item.name }}">
+                        <input type="hidden" name="action" value="decrease">
+                        <button type="submit">-</button>
+                    </form>
+                    <span class="item-quantity">{{ item.quantity }}</span>
+                    <form action="/update_cart" method="post">
+                        <input type="hidden" name="name" value="{{ item.name }}">
+                        <input type="hidden" name="action" value="increase">
+                        <button type="submit">+</button>
+                    </form>
+                </div>
+                <span class="item-price">${{ item.price }}</span>
+            </div>
+            <span class="subtotal-price">Subtotal: ${{ item.price * item.quantity }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="cart-summary">
+        <p><strong>Total Items:</strong> {{ total_items }}</p>
+        <p><strong>Total Amount:</strong> ${{ total_amount }}</p>
+    </div>
+    <button class="checkout-button">Checkout</button>
+</section>
+{% endblock %}

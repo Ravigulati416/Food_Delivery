@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Restaurants{% endblock %}
+
+{% block header_title %}Available Restaurants{% endblock %}
+
+{% block content %}
+<ul class="restaurant-list">
+    {% for restaurant in restaurants %}
+    <li class="restaurant-item">
+        <h2>
+            <a href="/restaurants/menus/{{ restaurant._id }}">{{ restaurant.name }}</a>
+        </h2>
+        <p>Location: {{ restaurant.location }}</p>
+        <p>Rating: ⭐ {{ restaurant.rating }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

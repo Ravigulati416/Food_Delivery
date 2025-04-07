@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="cart-button">
+            <a href="/cart" class="cart-link">🛒 <span id="cart-count">{{ session.cart | length }}</span></a>
+        </div>        
+        <h1>{% block header_title %}{% endblock %}</h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Select all Add to Cart buttons
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const form = this.closest('.add-to-cart-form');
+                const formData = new FormData(form);
+
+                // Send data to the server using fetch
+                fetch('/add_to_cart', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                return response.json();
+                })
+                .then(data => {
+                // Update the cart count in the cart button
+                const cartCountElement = document.getElementById('cart-count');
+                cartCountElement.textContent = data.cart_count;
+                })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+
+            });
+        });
+    });
+</script>
+
+</html>

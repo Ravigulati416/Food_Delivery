@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Menu{% endblock %}
+
+{% block header_title %}Menu for {{ restaurant_name }}{% endblock %}
+
+{% block content %}
+<ul class="menu-list">
+    {% for item in menu %}
+    <li class="menu-item">
+        <strong>{{ item.name }}</strong> - ${{ item.price }}
+        <form class="add-to-cart-form" method="post">
+            <input type="hidden" name="name" value="{{ item.name }}">
+            <input type="hidden" name="price" value="{{ item.price }}">
+            <button type="button" class="add-to-cart-btn">Add to Cart</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

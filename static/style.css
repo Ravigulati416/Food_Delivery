@@ -1,0 +1,349 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/static/images/pizza.jpeg'); /* Replace the linear gradient */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+}
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional overlay to darken the background */
+    z-index: -1;
+}
+
+
+
+/* General Panel Styling */
+.panel {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background for readability */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    margin-bottom: 30px; /* Optional spacing between panels */
+}
+
+/* Form Labels */
+label {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    color: #333;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+/* Buttons */
+button, a.button {
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* For links styled as buttons */
+    display: inline-block; /* Button-like display */
+}
+
+button:hover, a.button:hover {
+    background-color: #e07b00;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Links - General */
+a {
+    text-decoration: none;
+    color: white; /* Default bright text for contrast */
+    background-color: #007BFF; /* Button-like link */
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block; /* Makes links act like buttons */
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Specific Panel Links */
+.welcome-panel a,
+.login-panel a,
+.register-panel a {
+    color: white;
+    background-color: #007BFF;
+    font-weight: bold;
+}
+
+.welcome-panel a:hover,
+.login-panel a:hover,
+.register-panel a:hover {
+    background-color: #0056b3;
+}
+
+/* Error Messages */
+p.error {
+    color: #e74c3c;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(255, 230, 230, 0.8);
+    border-radius: 5px;
+}
+
+/* Header Styling */
+.header {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Vertically centers the content */
+}
+
+/* Login and Register Panels */
+.login-panel h2,
+.register-panel h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* Specific Colors for Panels */
+.login-panel h2 {
+    color: #2980b9; /* Login panel heading color */
+}
+
+.register-panel h2 {
+    color: #e74c3c; /* Register panel heading color */
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Shared Panel Style */
+.panel {
+    background-color: rgba(255, 255, 255, 0.9); /* Off-white semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    width: 350px;
+    text-align: center;
+    margin-bottom: 30px; /* Optional spacing if stacking panels */
+}
+
+/* Restaurant List Container */
+.restaurant-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0 auto; /* Centers the list container if necessary */
+    width: 100%; /* Ensures the list spans the container */
+}
+
+/* Individual Restaurant Items */
+.restaurant-item {
+    background-color: #f9f9f9; /* Light grey background */
+    margin: 15px 0; /* Adds spacing between items */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for aesthetic appeal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Aligns content to the left */
+}
+
+/* Restaurant Name Styling */
+.restaurant-item h2 {
+    color: #2c3e50; /* Dark navy color for high contrast */
+    font-size: 1.8em; /* Makes the name more prominent */
+    font-weight: bold; /* Emphasizes importance */
+    margin: 0 0 10px 0; /* Adds spacing below the name */
+}
+
+.restaurant-item p {
+    font-size: 1em; /* Standard size for supporting text */
+    margin: 5px 0; /* Adds spacing between paragraphs */
+}
+
+/* Menu List */
+.menu-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0 auto; /* Centers the list container */
+    width: 100%; /* Ensures the list spans the container */
+}
+
+/* Individual Menu Item Styling */
+.main-container {
+    display: flex;
+    justify-content: center; /* Keeps the content centered horizontally */
+    align-items: flex-start; /* Aligns content to the top */
+    height: auto; /* Adjusts the height to fit the content */
+    padding-top: 20px; /* Optional: Adds some space from the top */
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.menu-list {
+    padding: 0 15px; /* Adds horizontal padding for better spacing */
+    margin: 0; /* Ensures it doesn't inherit any margin from parent */
+}
+
+.menu-item {
+    background-color: #f9f9f9; /* Light grey background */
+    margin: 10px 0; /* Adds spacing between items */
+    padding: 15px;
+    border-radius: 5px; /* Rounded corners for visual appeal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Aligns text to the left */
+    font-size: 1.1em; /* Increases font size slightly */
+}
+
+.menu-item strong {
+    color: #2c3e50; /* Dark navy for the item name */
+    font-weight: bold; /* Emphasizes the menu item */
+}
+
+.menu-item:hover {
+    background-color: #e8e8e8; /* Slightly darker grey on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect */
+}
+
+.cart-link {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.cart-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f8b400;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cart-button:hover {
+    background-color: #e07b00;
+}
+
+.cart-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+
+.item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.item-name {
+    flex: 1;
+    text-align: left;
+    font-weight: bold;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-quantity {
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.item-price {
+    flex: 1;
+    text-align: right;
+}
+
+.subtotal-price {
+    text-align: right; /* Change alignment to left */
+    width: 100%; /* Reduce width slightly to pull it inward */
+    margin-top: 5px;
+    margin-left: 10px; /* Add a margin to move it slightly left */
+    font-size: 14px;
+    color: #4a3535;
+    
+}
+
+.cart-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+.checkout-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
